@@ -26,6 +26,16 @@
             android:id="@+id/drawer_about"
             android:icon="@drawable/ic_drawer_about"
             android:title="@string/drawer_about" />
+
+        <item
+            android:id="@+id/drawer_programming"
+            android:icon="@drawable/ic_drawer_about"
+            android:title="@string/drawer_about" />
+
+        <item
+            android:id="@+id/drawer_about_us"
+            android:icon="@drawable/ic_drawer_about"
+            android:title="@string/drawer_about" />
     </group>
 
 </menu>

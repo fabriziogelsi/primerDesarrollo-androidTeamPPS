@@ -29,6 +29,7 @@ import com.solodroid.yourradioappsinglestation.R;
 import com.solodroid.yourradioappsinglestation.fragments.FragmentHome;
 import com.solodroid.yourradioappsinglestation.notification.NotificationHandler;
 import com.solodroid.yourradioappsinglestation.services.NotificationBuilder;
+import com.solodroid.yourradioappsinglestation.utilities.Callscreen;
 
 import co.mobiwise.library.radio.RadioListener;
 import co.mobiwise.library.radio.RadioManager;
@@ -149,13 +150,21 @@ public class MainActivity extends AppCompatActivity implements RadioListener, Na
                 return true;
 
             case R.id.drawer_more:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.play_more_apps))));
+                Callscreen.renderURL(this, getString(R.string.play_more_apps));  //TODO Cambiar URL por la programacion de la radio
                 return true;
 
             case R.id.drawer_about:
                 Intent about = new Intent(this, ActivityAbout.class);
                 startActivity(about);
 
+                return true;
+
+            case R.id.drawer_programming:
+                Callscreen.renderURL(this, "Example");  //TODO Cambiar URL por la programacion de la radio
+                return true;
+
+            case R.id.drawer_about_us:
+                Callscreen.renderURL(this, "Example"); //TODO Cambiar URL por la info de la radio
                 return true;
 
         }

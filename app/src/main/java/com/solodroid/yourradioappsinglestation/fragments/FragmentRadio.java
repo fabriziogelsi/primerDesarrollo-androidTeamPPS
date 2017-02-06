@@ -32,10 +32,20 @@ import com.solodroid.yourradioappsinglestation.services.NotificationBuilder;
 import com.solodroid.yourradioappsinglestation.services.ParserURL;
 import com.solodroid.yourradioappsinglestation.utilities.Utils;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import co.mobiwise.library.radio.RadioListener;
 import co.mobiwise.library.radio.RadioManager;
 
 public class FragmentRadio extends Fragment implements OnClickListener, RadioListener {
+
+    @BindView(R.id.btn_increase_volume)
+    ImageView btnIncreaseVolume;
+    @BindView(R.id.btn_decrease_volume)
+    ImageView btnDecreaseVolume;
+
+    public AudioManager mAudioManager;
 
     private MainActivity mainActivity;
     private RadioManager radioManager;
@@ -70,6 +80,10 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
 
         initializeUIElements();
         albumArt = (ImageView) linearLayout.findViewById(R.id.image);
+
+        ButterKnife.bind(this, linearLayout);
+        mAudioManager = (AudioManager) mainActivity.getSystemService(Context.AUDIO_SERVICE);
+
 
         return linearLayout;
     }
@@ -375,4 +389,14 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
         }
     }
 
+    @OnClick({R.id.btn_increase_volume, R.id.btn_decrease_volume})
+    public void handleVolumeClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_increase_volume:
+                mAudioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
+            case R.id.btn_decrease_volume:
+                mAudioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.FLAG_PLAY_SOUND);
+                break;
+        }
+    }
 }
