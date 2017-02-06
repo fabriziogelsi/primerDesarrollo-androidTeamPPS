@@ -389,14 +389,20 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
         }
     }
 
-    @OnClick({R.id.btn_increase_volume, R.id.btn_decrease_volume})
-    public void handleVolumeClick(View view) {
-        switch (view.getId()) {
-            case R.id.btn_increase_volume:
-                mAudioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
-            case R.id.btn_decrease_volume:
-                mAudioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.FLAG_PLAY_SOUND);
-                break;
+    @OnClick(R.id.btn_decrease_volume)
+    public void handleDecreaseVolume(){
+        if(mAudioManager != null){
+            mAudioManager.adjustVolume(AudioManager.ADJUST_LOWER, AudioManager.FLAG_PLAY_SOUND);
         }
+
     }
+
+    @OnClick(R.id.btn_increase_volume)
+    public void handleIncreaseVolume(){
+        if(mAudioManager != null){
+            mAudioManager.adjustVolume(AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND);
+        }
+
+    }
+
 }
