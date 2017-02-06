@@ -13,13 +13,18 @@
             android:title="@string/drawer_social" />
 
         <item
-            android:id="@+id/drawer_rate"
-            android:icon="@drawable/ic_drawer_rate"
-            android:title="@string/drawer_rate" />
+            android:id="@+id/drawer_about_us"
+            android:icon="@drawable/ic_drawer_about"
+            android:title="@string/drawer_about_us" />
+
+        <item
+            android:id="@+id/drawer_programming"
+            android:icon="@drawable/ic_schedule"
+            android:title="@string/drawer_programming" />
 
         <item
             android:id="@+id/drawer_more"
-            android:icon="@drawable/ic_drawer_more"
+            android:icon="@drawable/ic_contact"
             android:title="@string/drawer_more" />
 
         <item
@@ -28,14 +33,21 @@
             android:title="@string/drawer_about" />
 
         <item
-            android:id="@+id/drawer_programming"
-            android:icon="@drawable/ic_drawer_about"
-            android:title="@string/drawer_about" />
+            android:id="@+id/drawer_exit"
+            android:icon="@drawable/ic_exit_aoo"
+            android:title="@string/drawer_exit" />
+
+        <!--
+        <item
+            android:id="@+id/drawer_empty_space_1"
+            android:title="@string/drawer_empty_title" />
+            -->
 
         <item
-            android:id="@+id/drawer_about_us"
-            android:icon="@drawable/ic_drawer_about"
-            android:title="@string/drawer_about" />
+            android:id="@+id/drawer_rate"
+            android:icon="@drawable/ic_drawer_rate"
+            android:title="@string/drawer_rate" />
+
     </group>
 
 </menu>

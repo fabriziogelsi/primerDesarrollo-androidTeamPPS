@@ -150,21 +150,24 @@ public class MainActivity extends AppCompatActivity implements RadioListener, Na
                 return true;
 
             case R.id.drawer_more:
-                Callscreen.renderURL(this, getString(R.string.play_more_apps));  //TODO Cambiar URL por la programacion de la radio
+                Callscreen.renderURL(this, getString(R.string.play_more_apps), "More");  //TODO Cambiar URL por la programacion de la radio y el titulo
                 return true;
 
             case R.id.drawer_about:
                 Intent about = new Intent(this, ActivityAbout.class);
                 startActivity(about);
-
                 return true;
 
             case R.id.drawer_programming:
-                Callscreen.renderURL(this, "Example");  //TODO Cambiar URL por la programacion de la radio
+                Callscreen.renderURL(this, "https://www.google.com", "Programming");  //TODO Cambiar URL por la programacion de la radio y l titulo
                 return true;
 
             case R.id.drawer_about_us:
-                Callscreen.renderURL(this, "Example"); //TODO Cambiar URL por la info de la radio
+                Callscreen.renderURL(this,"https://www.google.com", "About us"); //TODO Cambiar URL por la info de la radio y el titulo
+                return true;
+
+            case R.id.drawer_exit:
+                finish();
                 return true;
 
         }

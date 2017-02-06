@@ -11,9 +11,10 @@ import com.solodroid.yourradioappsinglestation.activities.BaseWebviewActivity;
 
 public class Callscreen {
 
-    public static void renderURL(Activity mActivity, String url) {
+    public static void renderURL(Activity mActivity, String url, String title) {
         Intent i = new Intent(mActivity, BaseWebviewActivity.class);
         i.putExtra(BaseWebviewActivity.URL_TO_RENDER_TAG,url);
+        i.putExtra(BaseWebviewActivity.TITLE, title);
         mActivity.startActivity(i);
     }
 

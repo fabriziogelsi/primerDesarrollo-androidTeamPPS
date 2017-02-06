@@ -9,6 +9,10 @@
     <string name="drawer_rate">Rate</string>
     <string name="drawer_more">More</string>
     <string name="drawer_about">About</string>
+    <string name="drawer_programming">Programming</string>
+    <string name="drawer_about_us">About us</string>
+    <string name="drawer_exit">Exit App</string>
+    <string name="drawer_empty_title"></string>
 
     <!--about information-->
     <string name="app_version">Version 1.0.0</string>
