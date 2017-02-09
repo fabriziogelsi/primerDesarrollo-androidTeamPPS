@@ -177,7 +177,7 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
                     Toast.makeText(activity, getResources().getString(R.string.volume_low), Toast.LENGTH_SHORT).show();
                 }
 
-                if (counter == Config.INTERSTITIAL_COUNTER_NUMBER) {
+                if (counter > Config.INTERSTITIAL_COUNTER_NUMBER) {
                     interstitialAd = new InterstitialAd(getActivity());
                     interstitialAd.setAdUnitId(getString(R.string.admob_interstitial_id));
                     AdRequest adRequest = new AdRequest.Builder().build();
@@ -191,7 +191,7 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
                     });
                     counter = 1;
                 } else {
-                    counter++;
+                    counter = 1;
                 }
 
 
@@ -276,6 +276,7 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
                 updateButtons();
             }
         });
+
     }
 
     @Override

@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements RadioListener, Na
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
                 new FragmentHome(), COLLAPSING_TOOLBAR_FRAGMENT_TAG).commit();
 
+
     }
 
     @Override
@@ -167,7 +168,8 @@ public class MainActivity extends AppCompatActivity implements RadioListener, Na
                 return true;
 
             case R.id.drawer_exit:
-                finish();
+                radioManager.stopRadio();
+                MainActivity.this.finish();
                 return true;
 
         }
