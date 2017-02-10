@@ -264,6 +264,7 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
 
     @Override
     public void onRadioConnected() {
+        buttonPlay.performClick();
     }
 
     @Override
@@ -278,6 +279,7 @@ public class FragmentRadio extends Fragment implements OnClickListener, RadioLis
         });
 
     }
+
 
     @Override
     public void onRadioStopped() {

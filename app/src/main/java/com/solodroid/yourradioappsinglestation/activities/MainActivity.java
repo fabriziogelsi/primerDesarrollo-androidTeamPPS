@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements RadioListener, Na
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
                 new FragmentHome(), COLLAPSING_TOOLBAR_FRAGMENT_TAG).commit();
 
-
+        onRadioConnected();
     }
 
     @Override
